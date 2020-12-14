@@ -84,12 +84,13 @@ export class HomePage {
 
   //function to edit item from list
   editItem(index, oldValue) {
+    oldValue = oldValue.value;
     const prompt = this.alertCtrl.create({
       title: 'Make some changes!',
       inputs: [
         {
           name: 'value',
-          value: oldValue,
+          value: oldValue.value,
         },
       ],
 
@@ -104,7 +105,7 @@ export class HomePage {
           text: 'Save',
           handler: item => {
             console.log('Save clicked');
-            this.list_b[index] = item.value;
+            this.list_b[index] = item;
           }
         }
       ]
