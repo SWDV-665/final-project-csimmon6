@@ -1,0 +1,56 @@
+page-home {
+
+}
+
+#title {
+    color: purple;
+    font-family: fantasy;
+    font-size: xx-large;
+    text-align: center;
+}
+
+#list_title {
+    text-align: center;
+    color: purple;
+}
+
+#post_title {
+    text-align: center;
+    color: purple;
+}
+
+.rankd_button {
+    background-color: purple;
+    --background-hover: var(--background);
+}
+
+#ion_body {
+    background-color: papayawhip;
+}
+
+.list_builder {
+    border-bottom-style: solid;
+    border-bottom: black, .5rem;
+}
+
+.newsfeed {
+    padding: 2rem;
+}
+
+.posts {
+    margin: 1rem;
+    border-bottom-style: solid;
+    border-bottom:black, .5rem;;
+}
+
+#list_items {
+    font-size: large;
+}
+
+#post_items {
+    font-size: large;
+}
+
+#thumb_counter {
+    color: purple;
+}
