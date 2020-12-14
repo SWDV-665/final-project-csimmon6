@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar>
+    <h1 id="title">Rankd</h1>
+  </ion-navbar>
+</ion-header>
+
+<ion-content id="ion_body"padding>
+  <!--list-builder content section-->
+  <div class="list_builder">
+
+    <!--list building interface on home screen-->
+    <h2>Start ranking! Press this button to create new lists! &rarr;</h2>
+    <p id="help_note">Slide items left to edit or delete</p>
+
+    <!--button to create a list-->
+    <ion-fab top right>
+      <button (click)="addItem()" class="rankd_button" ion-fab mini><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
+
+    <!--list structure-->
+    <ion-list>
+      <h2 id="list_title">{{list_title}}</h2>
+      <ion-item-sliding *ngFor="let item of list_b; let index = index">
+        <ion-item>
+          <p id="list_items">{{index + 1}}) {{item.value}}</p>
+        </ion-item>
+        <ion-item-options side="right">
+          <button (click)="editItem(index, item)" ion-button outline>
+            <ion-icon name="clipboard"></ion-icon>
+            Edit
+          </button>
+          <button (click)="deleteItem(index)" ion-button outline>
+            <ion-icon name="trash"></ion-icon>
+            Delete
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+
+    <!--posts list to feed-->
+    <button (click)="postList(list_b, list_title)" id="post_button" class="rankd_button" ion-button block color="primary">Click here to post!</button>
+ 
+  </div>
+
+  <!--newsfeed content section-->
+  <div class="newsfeed">
+
+    <h2>See other Rankings!</h2>
+    <p id="no_posts"> </p>
+    <!--newsfeed populator-->
+    <div *ngFor="let list of feed">
+      <div class="posts">
+        <h2 id="post_title">{{list.title}}</h2>
+        <ion-list>
+          <ion-item *ngFor="let item of list.list; let index = index">
+            <p id="post_items">{{index + 1}}) {{item.value}}</p>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+  </div>
+</ion-content>
